@@ -14,7 +14,17 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+
+  # Validate the triangle
+  raise TriangleError, "The triangle is not valid" unless (a + b) > c && (a + c) > b && (b + c) > a
+
+  if a === b && b === c
+    :equilateral
+  elsif a === b || a === c || b === c
+    :isosceles
+  else
+    :scalene
+  end
 end
 
 # Error class used in part 2.  No need to change this code.
